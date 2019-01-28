@@ -8,18 +8,18 @@ function contains = isinstring(string, string_list)
 % OUTPUT:
 % true if string can be found, false otherwise
 
-if isstring(string_list)
+if isstring(string)
     string_list = {string_list};
 elseif ~iscellstr(string_list)
-    error('"string_list" must be of type "chr array" or "str".')
+    error('"string_list" must be of type "cellstr" or "str".')
 end
 
 if iscellstr(string)
     n = length(string);
-elseif isstring(string)
+elseif ischar(string) || isstring(string)
     n = 1;
 else
-    error('"string" must be of type "chr array" or "str".')
+    error('"string" must be of type "chr", "str" or "cellstr".')
 end
 
 contains = zeros(1, n);
