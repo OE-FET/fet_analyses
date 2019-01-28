@@ -17,6 +17,7 @@ Use `TransferDataPlot` and `OutputDataPlot` to plot the output of `FETDataRead`.
 
 <p float="centre">
   <img src="examples/transfer_plot_log.png" width="400" />
+  &nbsp;&nbsp;&nbsp;&nbsp;
   <img src="examples/transfer_sqrt_log.png" width="400" /> 
 </p>
 
