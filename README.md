@@ -19,7 +19,7 @@ Use `TransferDataPlot` and `OutputDataPlot` to plot the output of `FETDataRead`.
   <img src="examples/transfer_sqrt_log.png" width="400" /> 
 </p>
 
-Use `MobilityVsVg` and `MobilityCalc` to calculate gate-voltage dependent and independent mobilities, respectivey. In addtion to the FET data structure, an argument `pars` containing the FET parameters (channel length and width, dielectric constant, etc) must be provided. If any of the arguments is missing, the user will be asked to provide them.
+Use `MobilityVsVg` and `MobilityCalc` to calculate gate-voltage dependent and independent mobilities, respectively. In addition to the FET data structure, an argument `pars` containing the FET parameters (channel length and width, dielectric constant, etc) must be provided. If any of the arguments is missing, the user will be asked to provide them.
 
 _Example:_
 
@@ -38,6 +38,5 @@ pars.d = 620*1e-9; % dielectric thickness in m
 pars.C = epsilon_0*epsilon/pars.d; % capacitance in F/m^2
 
 % calculate mobility
-[mobSat, mobLin] = MobilityCalc(data, pars);
 [vg, mobSatVg, mobLinVg] = MobilityVsVg(data, pars);
 ```
