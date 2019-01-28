@@ -1,8 +1,8 @@
 function TransferDataPlot(data)
 % TRANSFERDATAPLOT Plots given FET transfer curve data on logarithmic plot
 %   Promts user for file with data if no input is given
-if nargin==0
-    data=FETDataRead;
+if nargin == 0
+    data = FETDataRead;
     % handle gracefully if no file is selected
     if isempty(data)
         return;
@@ -18,7 +18,7 @@ catch
 end
 data.Ig = abs(data.Ig);
 % check if data matches expected transfer curve format
-if strcmp(data.type, 'transfer')==0
+if strcmp(data.type, 'transfer') == 0
     error('Data has the wrong format. Please select a file with transfer characteristics.');
 end
 
@@ -36,7 +36,7 @@ set(gca, 'YScale', 'log'); % set log scale
 
 % create plot legend
 for j=1:length(data.Vstep)
-    legStr{j} = ['Id (Vd = ', num2str(data.Vstep(j)),'V)'];
+    legStr{j} = ['Id (Vd = ', num2str(data.Vstep(j)), 'V)'];
     legStr{j+length(data.Vstep)} = ['Is (Vd = ', num2str(data.Vstep(j)), 'V)'];
     legStr{j+2*length(data.Vstep)} = ['Ig (Vd = ', num2str(data.Vstep(j)), 'V)'];
 end
@@ -87,8 +87,9 @@ SqrtSat = sqrt(data.Is(:, end)); hold on;
 plot(data.x, SqrtSat, '-');
 title('Transfer characteristics');
 xlabel('Gate Voltage (V)');
-ylabel('Sqrt of Drain Current (A$^{1/2}$)');
+ylabel('Sqrt of Drain Current (A^{1/2})');
 legend('Saturation current', 'Location', 'southwest');
+box on;
 
 % forward arrow
 p1 = [x1 SqrtSat(data.x(1:end/2)==x1)];
