@@ -61,9 +61,6 @@ end
 % save x-axis data to output structure
 data.x = data.DataMatrix(:, 1);
 
-% determine number of columns
-ncol = length(data.DataMatrix(1, :));
-
 % find colummns with source, drain and gate currents
 check_source = isinstring(S.colheaders, I_SOURCE_IDENTIFIERS);
 check_drain = isinstring(S.colheaders, I_DRAIN_IDENTIFIERS);
@@ -86,12 +83,11 @@ end
 step_names = S.colheaders(check_drain);
 
 data.Vstep = [];
-i = 1;
+nsteps = sum(check_drain);
 
-for name = step_names
-    find = regexp(name, '(\d+(\.\d+)*)', 'match');
-    data.Vstep(i) = str2double(find{1});
-    i = i+1;
+for i = 1:nsteps
+    find = regexp(step_names{i}, '(\d+(\.\d+)*)', 'match');
+    data.Vstep(i) = str2double(find);
 end
 
 end
