@@ -16,6 +16,7 @@ Use `FETDataRead` to read transfer and output curves saved by the Testing Rig or
 Use `TransferDataPlot` and `OutputDataPlot` to plot the output of `FETDataRead`. If forward and reverse sweeps have been recorded, the direction of the hysteresis loop will be indicated by arrows.
 
 <p float="centre">
+   &nbsp;&nbsp;&nbsp;&nbsp;
   <img src="examples/transfer_plot_log.png" width="400" />
   &nbsp;&nbsp;&nbsp;&nbsp;
   <img src="examples/transfer_sqrt_log.png" width="400" /> 
