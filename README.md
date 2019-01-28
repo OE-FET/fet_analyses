@@ -8,6 +8,7 @@ Download the scripts from github, for instance with:
 ```
 $ git clone https://github.com/OE-FET/FET-Analyses
 ```
+and add them to your MATLAB folder.
 
 ## Usage
 Use `FETDataRead` to read transfer and output curves saved by the Testing Rig or ESR setup. Since the two setups use different file formats, `FETDataRead` will search through the column headers to identify the file type ('transfer' or 'output') and possible linear and saturation sweep data. `FETDataRead` returns a MATLAB structure containing the stepped voltages (e.g., drain voltage steps in a transfer curve) as `data.Vstep`, the sweep type as `data.type` and the actual data as `data.x`, `data.Is`, `data.Id` and `data.Ig`.
