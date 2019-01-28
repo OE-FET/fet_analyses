@@ -14,6 +14,9 @@ Use `FETDataRead` to read transfer and output curves saved by the Testing Rig or
 
 Use `TransferDataPlot` and `OutputDataPlot` to plot the FET data structure returned by `FETDataRead`. The direction of hysteresis will be indicated by arrows.
 
-![transfer_plot_log](screenshot/transfer_plot_log.pdf) ![transfer_sqrt_log](screenshot/transfer_sqrt_log.pdf)
+<p float="centre">
+  <img src="examples/transfer_plot_log.png" width="400" />
+  <img src="examples/transfer_sqrt_log.png" width="400" /> 
+</p>
 
 Use `MobilityVsVg` and `MobilityCalc` to calculate gate-voltage dependent and independent mobilities, respectivey. In addtion to the FET data structure, a argument `pars` containing the FET parameters (i.e., channel length and width, dielectric constant, ...) must be provided. If any of the arguments is missing, the user will be asked to provide them.
