@@ -37,7 +37,7 @@ epsilon_0 = 8.854187817*1e-12; % in F/m
 
 pars.W = 1e-3; % channel width in m
 pars.L = 20*1e-6; % channel length in m
-pars.d = 620*1e-9; % dielectric thickness in m
+pars.d = 500*1e-9; % dielectric thickness in m
 pars.C = epsilon_0*epsilon/pars.d; % capacitance in F/m^2
 
 % calculate mobility
