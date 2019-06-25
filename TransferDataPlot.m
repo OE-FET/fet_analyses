@@ -1,6 +1,12 @@
 function TransferDataPlot(data)
 % TRANSFERDATAPLOT Plots given FET transfer curve data on logarithmic plot
-%   Promts user for file with data if no input is given
+%
+%   Promts user for file with data if no input is given.
+%
+%   Sam Schott, 06.10.2017
+%   ss2151@cam.ac.uk
+%
+
 if nargin == 0
     data = FETDataRead;
     % handle gracefully if no file is selected

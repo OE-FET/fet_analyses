@@ -1,12 +1,16 @@
 function contains = isinstring(string, string_list)
-% ISINSTRING checks any entry in string_list can be found in string.
+%ISINSTRING checks any entry in string_list can be found in string.
 %
-% INPUT:
-% string - string to search
-% string_list - cell array of strings / chr to search for in string
+%   INPUT:
+%   string      - string to search
+%   string_list - cell array of strings / chr to search for in string
 %
-% OUTPUT:
-% true if string can be found, false otherwise
+%   OUTPUT:
+%   contains    - true if string can be found, false otherwise
+%
+%   Sam Schott, 06.10.2017
+%   ss2151@cam.ac.uk
+%
 
 if isstring(string)
     string_list = {string_list};

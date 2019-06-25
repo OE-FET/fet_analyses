@@ -1,28 +1,27 @@
 function [data, path2File] = FETDataRead(path2File)
-% Sam Schott
-% FETDataRead reads data from a text file with FET transfer or output
-% characteristics
+% FETDataRead reads data from a text file with FET characteristics
+%
 %   The function reads the delimited data stored in the file and saves it
 %   in an output matrix. It also performs several checks to confirm that
 %   the file contains transfer characteristics in the linear and saturation
 %   regime.
 %
 %   INPUT:
-%   Path2File - full path to file with data, user is prompted to select a
-%   file if not given
+%   path2File       - full path to file with data, user is prompted to 
+%                     select a file if not given
 %
 %   OUTPUT:
-%   data.type - string specifying type of data (transfer or output)
-%   data.x - vector containing x-axis data (gate or drain voltage)
-%   data.Is - matrix containing source current data
-%   data.Id - matrix containing drain current data
-%   data.Ig - matrix containing gate current data
-%   data.Vstep - vector containing the drain or gate voltage steps
+%   data.type       - string specifying type of data (transfer or output)
+%   data.x          - vector containing x-axis data (gate or drain voltage)
+%   data.Is         - matrix containing source current data
+%   data.Id         - matrix containing drain current data
+%   data.Ig         - matrix containing gate current data
+%   data.Vstep      - vector containing the drain or gate voltage steps
 %   data.DataMatrix - matric containing the raw data from file
 %
 %   Sam Schott, 06.10.2017
 %   ss2151@cam.ac.uk
-%%
+%
 
 global path
 

@@ -1,24 +1,26 @@
 function [muSat, muLin] = MobilityCalc(varargin)
-% MOBILITYCALC calculates the mobility in the saturation regime by a linear
-% fit to sqrt(Isd) over the last 20V of the data range.
+% MOBILITYCALC calculates the mobility in the saturation regime
 %
-%   CALL AS:
-%   mobilityCalc() - prompts user for data file and parameters
-%   mobilityCalc(data) - prompts user for parameters
-%   mobilityCalc(data, param) - calculates mobilities from given inputs
-%   mobilityCalc(data, param, 'plot',1) - plots fit curves
+%   Calculates the mobility in the saturation regime by a linear
+%   fit to sqrt(Isd) over the last 20V of the data range.
+%
+%   USGAE:
+%   MOBILITYCALC() - prompts user for data file and parameters
+%   MOBILITYCALC(data) - prompts user for parameters
+%   MOBILITYCALC(data, param) - calculates mobilities from given inputs
+%   MOBILITYCALC(data, param, 'plot',1) - plots fit curves
 %
 %   INPUT:
-%   data.x - vector with gate voltage data for x.axis
-%   data.Id - matrix with drain current data
-%   data.Vstep - vector with drain voltage steps
-%   param - structure containing channel width W, length L, dielectric
-%   thickness d and dielectric constant epsilon
+%   data.x      - vector with gate voltage data for x.axis
+%   data.Id     - matrix with drain current data
+%   data.Vstep  - vector with drain voltage steps
+%   param       - structure containing channel width W, length L,
+%                 dielectric thickness d and dielectric constant epsilon
 %   
 %   OUTPUT:
-%   muSat - saturation mobility in cm^2/Vs
-%   muLin - linear mobility in cm^2/Vs
-%   Vth - threshold voltage in V
+%   muSat   - saturation mobility in cm^2/Vs
+%   muLin   - linear mobility in cm^2/Vs
+%   Vth     - threshold voltage in V
 %
 %   Sam Schott, 06.10.2017
 %   ss2151@cam.ac.uk

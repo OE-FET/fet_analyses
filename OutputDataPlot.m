@@ -1,6 +1,11 @@
 function [fhandle] = OutputDataPlot(data)
 % OUTPUTDATAPLOT Plots given FET output curve data on logarithmic plot
-%   Promts user for file with data if no input is given
+%
+%   Promts user for file with data if no input is given.
+%
+%   Sam Schott, 06.10.2017
+%   ss2151@cam.ac.uk
+%
 
 %% INPUT processing
 % check if data structure is given, otherwise ask for file

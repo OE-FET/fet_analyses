@@ -1,27 +1,26 @@
  function [Vg, mobSat, mobLin, data, pars] = MobilityVsVg(varargin)
-% MOBILITYVSVG calculates the gate voltage dependent mobility in the linear
-% and saturation regimes from given transfer curve data.
+%MOBILITYVSVG calculates the gate voltage dependent mobility
 %
-% CALL AS:
-% MobilityVsVg() - prompts user for data file and parameters
-% MobilityVsVg(data) - prompts user for parameters
-% MobilityVsVg(data, param) - calculates mobilities from given inputs
-% MobilityVsVg(data, param, 'plot', 0) - surpresses plot output
+%   USAGE:
+%   MOBILITYVSVG() - prompts user for data file and parameters
+%   MOBILITYVSVG(data) - prompts user for parameters
+%   MOBILITYVSVG(data, param) - calculates mobilities from given inputs
+%   MOBILITYVSVG(data, param, 'plot', 0) - surpresses plot output
 %
-% INPUT:
-% data  - structure containing transfer curve data from FETDataRead
-% data.x  - vector with gate voltage data for x.axis
-% data.Id  - matrix with drain current data
-% data.Vstep - vector with drain voltage steps
-% param  - structure containing channel width W and length L, the
-%     deielectric thickness d and dielectric constant epsilon
+%   INPUT:
+%   data        - structure containing transfer curve data from FETDataRead
+%   data.x      - vector with gate voltage data for x.axis
+%   data.Id     - matrix with drain current data
+%   data.Vstep  - vector with drain voltage steps
+%   param       - structure containing channel width W and length L, the
+%                 deielectric thickness d and dielectric constant epsilon
 % 
-% OUTPUT:
-% muSat  - saturation mobility in cm^2/Vs
-% muLin  - linear mobility in cm^2/Vs
+%   OUTPUT:
+%   muSat  - saturation mobility in cm^2/Vs
+%   muLin  - linear mobility in cm^2/Vs
 %
-% Sam Schott, 06.10.2017
-% ss2151@cam.ac.uk
+%   Sam Schott, 06.10.2017
+%   ss2151@cam.ac.uk
 %
 
 %% Input processing
