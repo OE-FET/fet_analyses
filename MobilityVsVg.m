@@ -115,8 +115,8 @@ mobLin = [mobLinFWD; flipud(mobLinBWD)];
 
 if Plot == 1
     figure(); plot(Vg, mobSat, 'o'); title('Saturation mobility'); 
-    ylabel('Mobility (cm$^2$/Vs)'); xlabel('Gate Voltage (V)'); 
+    ylabel('Mobility (cm^2/Vs)'); xlabel('Gate Voltage (V)'); 
     figure(); plot(Vg, mobLin, 'o'); title('Linear mobility'); 
-    ylabel('Mobility (cm$^2$/Vs)'); xlabel('Gate Voltage (V)'); 
+    ylabel('Mobility (cm^2/Vs)'); xlabel('Gate Voltage (V)'); 
 end
 
