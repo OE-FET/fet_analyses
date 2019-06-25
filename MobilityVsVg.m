@@ -27,9 +27,9 @@
 
 % check if transfer data or file path is given as argument
 if nargin > 0 && isstruct(varargin{1})
- data = varargin{1}; 
+	data = varargin{1}; 
 else
- data = FETDataRead; 
+	data = FETDataRead; 
 end
 
 try
@@ -114,9 +114,9 @@ mobSat = [mobSatFWD; flipud(mobSatBWD)];
 mobLin = [mobLinFWD; flipud(mobLinBWD)]; 
 
 if Plot == 1
-    figure(1); plot(Vg, mobSat, 'o'); title('Saturation mobility'); 
+    figure(); plot(Vg, mobSat, 'o'); title('Saturation mobility'); 
     ylabel('Mobility (cm$^2$/Vs)'); xlabel('Gate Voltage (V)'); 
-    figure(2); plot(Vg, mobLin, 'o'); title('Linear mobility'); 
+    figure(); plot(Vg, mobLin, 'o'); title('Linear mobility'); 
     ylabel('Mobility (cm$^2$/Vs)'); xlabel('Gate Voltage (V)'); 
 end
 
