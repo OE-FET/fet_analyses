@@ -85,10 +85,10 @@ SqrtIdFWD = sqrt(IdFWD); SqrtIdBWD = sqrt(IdBWD);
 
 % smooth data
 sp = 3; 
-SqrtIdFWD(:, 1) = datasmooth(SqrtIdFWD(:, 1), sp); SqrtIdFWD(:, 2) = datasmooth(SqrtIdFWD(:, 2), sp); 
-SqrtIdBWD(:, 1) = datasmooth(SqrtIdBWD(:, 1), sp); SqrtIdBWD(:, 2) = datasmooth(SqrtIdBWD(:, 2), sp); 
-IdFWD(:, 1) = datasmooth(IdFWD(:, 1), sp); IdFWD(:, 2) = datasmooth(IdFWD(:, 2), sp); 
-IdBWD(:, 1) = datasmooth(IdBWD(:, 1), sp); IdBWD(:, 2) = datasmooth(IdBWD(:, 2), sp); 
+SqrtIdFWD(:, 1) = smooth(SqrtIdFWD(:, 1), sp); SqrtIdFWD(:, 2) = smooth(SqrtIdFWD(:, 2), sp); 
+SqrtIdBWD(:, 1) = smooth(SqrtIdBWD(:, 1), sp); SqrtIdBWD(:, 2) = smooth(SqrtIdBWD(:, 2), sp); 
+IdFWD(:, 1) = smooth(IdFWD(:, 1), sp); IdFWD(:, 2) = smooth(IdFWD(:, 2), sp); 
+IdBWD(:, 1) = smooth(IdBWD(:, 1), sp); IdBWD(:, 2) = smooth(IdBWD(:, 2), sp); 
 
 % differentiate data
 dV = mean(diff(Vg)); 
