@@ -8,11 +8,14 @@ function TransferDataPlot(data)
 %
 
 if nargin == 0
+    % promt user to select a file
     data = FETDataRead;
-    % handle gracefully if no file is selected
     if isempty(data)
         return;
     end
+elseif isstring(data) || ischar(data)
+    % load from given path
+    data = FETDataRead(data);
 end
 
 % take absolute vales of currents
@@ -47,7 +50,7 @@ for j=1:length(data.Vstep)
     legStr{j+2*length(data.Vstep)} = ['Ig (Vd = ', num2str(data.Vstep(j)), 'V)'];
 end
 legend(legStr, 'Location', 'southwest');
-title('Transfer characteristics');
+title(['Transfer characteristics: ' data.title],'Interpreter','none');
 xlabel('Gate Voltage (V)');
 ylabel('Drain Current (A)');
 set(gca, 'YMinorTick', 'on');
@@ -91,9 +94,9 @@ annotation(fhandle, 'arrow', [p2nx p1nx], [p2ny-offset p1ny-offset]);
 fhandle = figure(); % open new figure
 SqrtSat = sqrt(data.Is(:, end)); hold on;
 plot(data.x, SqrtSat, '-');
-title('Transfer characteristics');
+title(['Transfer characteristics: ' data.title],'Interpreter','none');
 xlabel('Gate Voltage (V)');
-ylabel('Sqrt of Drain Current (A^{1/2})');
+ylabel('Sqrt of Drain Current (Sqrt(A))');
 legend('Saturation current', 'Location', 'southwest');
 box on;
 
