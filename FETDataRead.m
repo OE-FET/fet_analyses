@@ -1,4 +1,4 @@
-function [data, path2File] = FETDataRead(path2File)
+function [data, filePath] = FETDataRead(filePath)
 % FETDataRead reads data from a text file with FET characteristics
 %
 %   The function reads the delimited data stored in the file and saves it
@@ -17,7 +17,9 @@ function [data, path2File] = FETDataRead(path2File)
 %   data.Id         - matrix containing drain current data
 %   data.Ig         - matrix containing gate current data
 %   data.Vstep      - vector containing the drain or gate voltage steps
-%   data.DataMatrix - matric containing the raw data from file
+%   data.DataMatrix - matrix containing the raw data from file
+%   data.path       - file path
+%   data.title      - title (file name without extension)
 %
 %   Sam Schott, 06.10.2017
 %   ss2151@cam.ac.uk
@@ -33,17 +35,17 @@ I_DRAIN_IDENTIFIERS = {'Id', 'Isd', 'Drain current'};
 I_GATE_IDENTIFIERS = {'Ig', 'Gate current'};
 
 if nargin==0
-    [fileName, pathName] = uigetfile([path, '*.txt'], 'Select file');
-    path2File = fullfile(pathName, fileName);
+    [fileName, dirName] = uigetfile([path, '*.txt'], 'Select file');
+    filePath = fullfile(dirName, fileName);
     % output empty matrix if no file is selected
     if fileName == 0
         data = [];
         return;
     end
-    path = pathName;
+    path = dirName;
 end
 
-S = importdata(path2File);
+S = importdata(filePath);
 
 % save raw data to output structure
 data.DataMatrix = S.data;
@@ -88,5 +90,10 @@ for i = 1:nsteps
     find = regexp(step_names{i}, '(\d+(\.\d+)*)', 'match');
     data.Vstep(i) = str2double(find);
 end
+
+[~, name, ~] = fileparts(filePath);
+
+data.path = filePath;
+data.title = name;
 
 end
